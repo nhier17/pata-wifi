@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron, Exo } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const exo = Exo({
+  variable: "--font-exo",
   subsets: ["latin"],
 });
 
@@ -25,8 +26,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${orbitron.variable} ${exo.variable} antialiased bg-dark-100`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
