@@ -1,11 +1,15 @@
-import Image from "next/image";
+import { Hero } from "@/components/features/Hero";
+import { AboutUs } from "@/components/features/AboutUs";
+import { Services } from "@/components/features/Services";
 
 export default function Home() {
   return (
     <>
-      <main>
-      <h1>Home</h1>
-      </main>
+    <Hero />
+    <main className="root-container">
+      <AboutUs />
+      <Services />
+    </main>
     </>
   );
 }
