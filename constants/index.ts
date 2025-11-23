@@ -1,3 +1,13 @@
+import {
+  CheckCircle,
+  Wallet,
+  Zap,
+  Map,
+  Wrench,
+  RefreshCcw,
+  Handshake,
+} from 'lucide-react'
+
 export const navItems = [
     { href: '#about', label: 'About' },
     { href: '#services', label: 'Services' },
@@ -33,4 +43,15 @@ export const services = [
     desc: 'Managed WiFi for estates, apartments, campuses and shared community spaces.',
     img: 'https://i.pinimg.com/736x/7f/68/7f/7f687f2a2afb3bfd841af60e7ab62db7.jpg',
   },
+]
+
+//why choose us
+export const whyUs = [
+    { title: 'Reliable Connection', icon: CheckCircle, desc: 'Fiber‑backed network with smart redundancy for consistent uptime.' },
+  { title: 'Affordable Plans', icon: Wallet, desc: 'Value pricing for Kenyan households, SMEs and students.' },
+  { title: 'Fast Support', icon: Zap, desc: 'Friendly local team available to help when you need it.' },
+  { title: 'Wide Coverage', icon: Map, desc: 'Active in multiple towns and estates with growing reach.' },
+  { title: 'Quick Installation', icon: Wrench, desc: 'Swift installs and activations so you can get online fast.' },
+  { title: 'Flexible Options', icon: RefreshCcw, desc: 'Daily passes, monthlies, dedicated, hotspots and reseller options.' },
+  { title: 'Community‑Focused', icon: Handshake, desc: 'Designed for estates, learning and businesses across Kenya.' },
 ]
