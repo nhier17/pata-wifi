@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import { plans } from "@/constants";
 import { Button } from "@/components/ui/button";
+import { GetConnectedForm } from "@/components/forms/GetConnectedForm";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -38,12 +39,11 @@ export const Pricing = () => {
                   {p.features.map((f) => (<li key={f}>• {f}</li>))}
                 </ul>
                 <div className="mt-6">
-                <Button
-                type="button"
-                className="btn bg-cyan-100 hover:bg-cyan-100/80"
-                >
-                    Get Connected
-                </Button>
+                <GetConnectedForm 
+                trigger={<Button type="button" className="btn bg-cyan-100 hover:bg-cyan-100/80 cursor-pointer">Get Connected</Button>} 
+                defaultTariffs={[p.name]}
+                allTariffs={allTariffs}
+                />
                 </div>
               </div>
             )

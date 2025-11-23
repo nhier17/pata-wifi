@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import { Button } from "../ui/button";
+import { GetConnectedForm } from "../forms/GetConnectedForm";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger, SplitText)
 
@@ -76,8 +78,10 @@ export const Hero = () => {
             Pata WiFi Technologies LTD is a modern ISP bridging the digital gap with fiber-backed connectivity, daily WiFi passes, business solutions and community hotspots.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Button className="btn btn-primary text-base text-white">Buy Daily Pass</Button>
-            <Button className="btn bg-cyan-100 hover:bg-cyan-100/80 text-base text-white">Request Installation</Button>
+            <Link href="#pricing" className="btn btn-primary text-base text-white cursor-pointer">Buy Daily Pass</Link>
+            <GetConnectedForm 
+            trigger={<Button className="btn py-6 cursor-pointer bg-cyan-100 hover:bg-cyan-100/80 text-base text-white">Request Installation</Button>} 
+            />
           </div>
         </div>
 

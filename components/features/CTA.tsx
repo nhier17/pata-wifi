@@ -68,20 +68,20 @@ export const CTA = () => {
 
         <div className="cta-animate mt-10 flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
           <Link href="#pricing">
-            <Button className="px-6 py-3 text-base font-semibold bg-gradient-to-r from-cyan-400 to-cyan-600 text-black hover:opacity-90">
+            <Button className="px-6 py-3 text-base font-semibold bg-gradient-to-r from-cyan-400 to-cyan-600 text-black hover:opacity-90 cursor-pointer">
               Buy Daily Pass
             </Button>
           </Link>
 
-          <Button variant="secondary" className="px-6 py-3 text-base font-semibold">
+          <Button variant="secondary" className="px-6 py-3 text-base font-semibold cursor-pointer">
             Request Installation
           </Button>
 
-          <Button variant="outline" className="px-6 py-3 text-base">
+          <Button variant="outline" className="px-6 py-3 text-base cursor-pointer">
             Become a Reseller
           </Button>
 
-          <Button variant="outline" className="px-6 py-3 text-base">
+          <Button variant="outline" className="px-6 py-3 text-base cursor-pointer">
             Get Business Internet
           </Button>
         </div>
@@ -90,7 +90,7 @@ export const CTA = () => {
           <Link href="https://wa.me/254727717901" target="_blank">
             <Button
               variant="outline"
-              className="px-6 py-3 font-medium border-cyan-500/40 text-cyan-300"
+              className="px-6 py-3 font-medium border-cyan-500/40 text-cyan-300 cursor-pointer"
             >
               WhatsApp Us
             </Button>
@@ -99,7 +99,7 @@ export const CTA = () => {
           <Link href="tel:+254727717901">
             <Button
               variant="outline"
-              className="px-6 py-3 font-medium border-cyan-500/40 text-cyan-300"
+              className="px-6 py-3 font-medium border-cyan-500/40 text-cyan-300 cursor-pointer"
             >
               Call 0727 717 901
             </Button>
