@@ -77,7 +77,7 @@ export const Hero = () => {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Button className="btn btn-primary text-base text-white">Buy Daily Pass</Button>
-            <Button className="btn btn-secondary text-base text-white">Request Installation</Button>
+            <Button className="btn bg-cyan-100 hover:bg-cyan-100/80 text-base text-white">Request Installation</Button>
           </div>
         </div>
 

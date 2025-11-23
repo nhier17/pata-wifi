@@ -182,15 +182,15 @@
     }
 
     .btn {
-      @apply inline-flex items-center justify-center rounded-full px-5 py-3 font-medium transition-colors;
+      @apply bg-cyan-300 rounded-lg px-5 py-3 font-medium transition-colors flex justify-center items-center;
     }
 
     .btn-primary {
-      @apply bg-(--neon-cyan) text-black hover:bg-cyan-300;
+      @apply bg-primary text-black hover:bg-primary/80;
     }
 
     .btn-secondary {
-      @apply bg-(--safe-green) text-black hover:bg-emerald-300;
+      @apply bg-secondary text-black hover:bg-secondary/80;
     }
 
     .btn-outline {

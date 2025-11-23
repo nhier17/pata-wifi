@@ -17,6 +17,16 @@ export const navItems = [
     { href: '#contact', label: 'Contact' },
   ]
 
+//footer
+export const footerLinks = [
+    { href: '#about', label: 'About' },
+    { href: '#services', label: 'Services' },
+    { href: '#why', label: 'Why Us' },
+    { href: '#pricing', label: 'Pricing' },
+    { href: '#coverage', label: 'Coverage' },
+    { href: '#contact', label: 'Contact' },
+]
+
 export const services = [
   {
     title: 'Home Internet',
@@ -26,12 +36,12 @@ export const services = [
   {
     title: 'Business Internet',
     desc: 'Dedicated and shared business connectivity with SLAs, static IP options and priority support.',
-    img: 'https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://i.pinimg.com/1200x/34/42/7d/34427d6f26d84673a0885988c7cdb495.jpg',
   },
   {
     title: 'Kadogo Daily WiFi',
     desc: 'Affordable daily pass to stay online — perfect for students, gig work and short-term needs.',
-    img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop',
+    img: 'https://i.pinimg.com/736x/8d/e8/d7/8de8d72c4476818baf6ba5a06eed1c0d.jpg',
   },
   {
     title: 'Reseller Bandwidth',
@@ -47,7 +57,7 @@ export const services = [
 
 //why choose us
 export const whyUs = [
-    { title: 'Reliable Connection', icon: CheckCircle, desc: 'Fiber‑backed network with smart redundancy for consistent uptime.' },
+  { title: 'Reliable Connection', icon: CheckCircle, desc: 'Fiber‑backed network with smart redundancy for consistent uptime.' },
   { title: 'Affordable Plans', icon: Wallet, desc: 'Value pricing for Kenyan households, SMEs and students.' },
   { title: 'Fast Support', icon: Zap, desc: 'Friendly local team available to help when you need it.' },
   { title: 'Wide Coverage', icon: Map, desc: 'Active in multiple towns and estates with growing reach.' },
@@ -55,3 +65,48 @@ export const whyUs = [
   { title: 'Flexible Options', icon: RefreshCcw, desc: 'Daily passes, monthlies, dedicated, hotspots and reseller options.' },
   { title: 'Community‑Focused', icon: Handshake, desc: 'Designed for estates, learning and businesses across Kenya.' },
 ]
+
+//pricing
+export const plans = [
+  {
+    name: 'Daily WiFi (Kadogo Pass)',
+    price: 'KSh 50 — 100/day',
+    speed: 'Up to 10 Mbps',
+    features: ['Pay-as-you-go', 'Great for students', 'Hotspot access'],
+    cta: 'Buy Daily Pass',
+  },
+  {
+    name: 'Home Internet — Standard',
+    price: 'KSh 2,500/mo',
+    speed: '20–30 Mbps',
+    features: ['Unlimited data', 'Free router on yearly plan', 'Evening peak optimization'],
+    cta: 'Get Home Internet',
+  },
+  {
+    name: 'Home Internet — Turbo',
+    price: 'KSh 3,999/mo',
+    speed: '50–70 Mbps',
+    features: ['Unlimited data', 'Ideal for 4K streaming', 'Gaming friendly latency'],
+    cta: 'Get Turbo',
+  },
+  {
+    name: 'Business — Starter',
+    price: 'KSh 6,999/mo',
+    speed: 'Up to 100 Mbps',
+    features: ['Priority support', 'Static IP (optional)', 'SLA available'],
+    cta: 'Get Business Internet',
+  },
+]
+
+
+//coverage
+export const coverage = {
+towns: [
+  'Nairobi', 'Mombasa', 'Nakuru', 'Eldoret', 'Thika',
+  'Kisumu', 'Nyeri', 'Kitengela', 'Ruiru', 'Kiambu',
+],
+estates: [
+  'South B', 'South C', 'Ngong Road', 'Embakasi', 'Kasarani',
+  'Utawala', 'Rongai', 'Ruaka', 'Zimmerman', 'Donholm',
+],
+}

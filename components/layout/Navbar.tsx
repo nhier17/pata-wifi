@@ -63,7 +63,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="#cta" className="btn btn-primary hidden md:inline-flex">Get Connected</Link>
+          <Link href="#cta" className="btn btn-primary hidden md:inline-flex  text-white px-3 py-2">Get Connected</Link>
           <Button
             type="button"
             aria-expanded={isMenuOpen}
@@ -94,7 +94,8 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="mt-2 flex gap-2">
-                <Link href="#cta" onClick={toggleMenu} className="btn btn-primary flex-1">Get Connected</Link>
+                <Link href="#cta" onClick={toggleMenu} className="btn btn-primary flex-1 bg-primary text-white px-3 py-2">
+                Get Connected</Link>
               </div>
             </div>
           </div>
