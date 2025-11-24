@@ -1,5 +1,6 @@
 import { footerLinks } from "@/constants";
 import Link from "next/link";
+import Image from "next/image";
 
 
 export const Footer = () => {
@@ -9,8 +10,13 @@ export const Footer = () => {
       <div className="container  grid md:grid-cols-4 gap-8">
         <div>
           <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-xl bg-primary/90 grid place-items-center font-heading text-black">P</div>
-            <span className="font-heading">Pata WiFi</span>
+            <Image
+            src="/images/logo.jpeg"
+            alt="Pata WiFi Logo"
+            width={50}
+            height={50}
+            className="rounded-full object-cover"
+            />
           </div>
           <p className="text-white/70 mt-3 text-sm">
             Fast, reliable & affordable internet for every Kenyan home & business.

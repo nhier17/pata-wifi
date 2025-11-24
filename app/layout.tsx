@@ -18,6 +18,9 @@ const exo = Exo({
 export const metadata: Metadata = {
   title: "Pata WiFi",
   description: "Pata WiFi Technologies LTD delivers fast, reliable and affordable internet to Kenyan homes and businesses. Daily WiFi passes, fiber broadband, hotspots, reseller bandwidth and more.",
+  icons: {
+    icon: "/images/logo.jpeg",
+  }
 };
 
 export default function RootLayout({

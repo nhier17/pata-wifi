@@ -46,8 +46,13 @@ export const Navbar = () => {
     >
       <nav className="container-custom flex items-center justify-between py-3">
         <Link href="#" className="flex items-center gap-2 group">
-          <div className="h-9 w-9 rounded-xl bg-primary/90 bg-glow grid place-items-center font-heading text-black">P</div>
-          <span className="font-heading tracking-wide text-white group-hover:text-primary transition-colors">Pata WiFi</span>
+          <Image
+          src="/images/logo.jpeg"
+          alt="Pata WiFi Logo"
+          width={50}
+          height={50}
+          className="rounded-full object-cover"
+          />
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
