@@ -1,11 +1,11 @@
 import {
   CheckCircle,
   Wallet,
-  Zap,
   Map,
   Wrench,
   RefreshCcw,
   Handshake,
+  Headset,
 } from 'lucide-react'
 
 export const navItems = [
@@ -59,7 +59,7 @@ export const services = [
 export const whyUs = [
   { title: 'Reliable Connection', icon: CheckCircle, desc: 'Fiber‑backed network with smart redundancy for consistent uptime.' },
   { title: 'Affordable Plans', icon: Wallet, desc: 'Value pricing for Kenyan households, SMEs and students.' },
-  { title: 'Fast Support', icon: Zap, desc: 'Friendly local team available to help when you need it.' },
+  { title: 'Fast Support', icon: Headset, desc: 'Friendly local team available to help when you need it.' },
   { title: 'Wide Coverage', icon: Map, desc: 'Active in multiple towns and estates with growing reach.' },
   { title: 'Quick Installation', icon: Wrench, desc: 'Swift installs and activations so you can get online fast.' },
   { title: 'Flexible Options', icon: RefreshCcw, desc: 'Daily passes, monthlies, dedicated, hotspots and reseller options.' },

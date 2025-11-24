@@ -34,7 +34,6 @@ export const Hero = () => {
       },
     })
 
-    // Fade-ups
     gsap.utils.toArray('.hero-fade').forEach((el: any, i: number) => {
       gsap.fromTo(
         el,

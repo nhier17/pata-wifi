@@ -11,18 +11,21 @@ import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from 
 import CustomFormField, {FormFieldType } from "./CustomFormField";
 import { userSchema, cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 
 type FormValues = z.infer<typeof userSchema>
 
 const DEFAULT_TARIFFS = [
-  'Daily WiFi (Kadogo Pass)',
-  'Home Internet — Standard',
-  'Home Internet — Turbo',
-  'Business — Starter',
+  {value: 'daily', label: 'Daily WiFi (Kadogo Pass)'},
+  {value: 'home-standard', label: 'Home Internet — Standard'},
+  {value: 'home-turbo', label: 'Home Internet — Turbo'},
+  {value: 'business-starter', label: 'Business — Starter'},
 ]
 
-export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, className }: GetConnectedProps) => {
+const WHATSAPP_NUMBER = '254795642609'
+
+export const GetConnectedForm = ({ trigger, defaultTariffs, allTariffs, className }: GetConnectedProps) => {
     const [loading, setLoading] = useState(false);
     const [open, setOpen] = useState(false);
     const form = useForm<FormValues>({
@@ -31,18 +34,31 @@ export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, class
             name: '',
             email: '',
             phone: '',
-            street: '',
+            estate: '',
             city: '',
-            tariffs: [],
+            tariffs: '',
         },
     });
 
     const onSubmit = (data: FormValues) => {
         setLoading(true);
         try {
-          
+          const message = [
+        '*New Get Connected request*',
+        `Name: ${data.name}`,
+        `Email: ${data.email}`, 
+        `Phone: ${data.phone}`,
+        `Estate: ${data.estate}`,
+        `City: ${data.city}`, 
+        `Tariff(s): ${data.tariffs}`,
+            ].join('\n')
+         const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+         window.open(url, '_blank', 'noopener')
+         toast.success('Request sent successfully')
+         setOpen(false)
         } catch (error) {
-          
+          console.error(error)
+          toast.error('Failed to send request')
         } finally {
           setLoading(false);
         }
@@ -55,7 +71,7 @@ export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, class
       name: '',
       email: '',
       phone: '',
-      street: '',
+      estate: '',
       city: '',
       tariffs: defaultTariffs,
     })
@@ -64,7 +80,7 @@ export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, class
     return (
         <Dialog open={open} onOpenChange={resetOnOpenChange}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className={cn('bg-dark-200 text-white border-white/10')}>
+      <DialogContent className={cn('bg-dark-200 text-white border border-white/90', className)}>
         <DialogHeader>
           <DialogTitle className="text-white">Get Connected</DialogTitle>
         </DialogHeader>
@@ -95,9 +111,9 @@ export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, class
                <CustomFormField
                control={form.control}
                fieldType={FormFieldType.INPUT}
-               name="street"
-               label="Street"
-               placeholder="Enter your street address"
+               name="estate"
+               label="Estate"
+               placeholder="Enter your estate address"
                />
                <CustomFormField
                control={form.control}
@@ -112,20 +128,16 @@ export const GetConnectedForm = ({ trigger, defaultTariffs=[], allTariffs, class
                name="tariffs"
                label="Tariffs"
                placeholder="Select your tariff"
-               >
-               {DEFAULT_TARIFFS.map((tariff) => (
-                   <option key={tariff} value={tariff}>
-                   {tariff}
-                   </option>
-               ))}
-               </CustomFormField>
+               options={DEFAULT_TARIFFS}
+               />
+  
            <div className="pt-2 flex justify-end gap-2">
-              <Button type="button" variant="ghost" className="text-white/80 hover:text-white" onClick={() => setOpen(false)}>
+              <Button type="button" variant="ghost" className="cancel-btn" onClick={() => setOpen(false)}>
                 Cancel
               </Button>
               <Button 
               type="submit" 
-              className="btn btn-primary"
+              className="btn btn-primary cursor-pointer"
               disabled={loading}
               >
                 {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : 'Submit via WhatsApp'}

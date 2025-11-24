@@ -182,20 +182,39 @@
     }
 
     .btn {
-      @apply bg-cyan-300 rounded-lg px-5 py-3 font-medium transition-colors flex justify-center items-center;
+      @apply bg-cyan-300 rounded-lg px-5 py-3 font-medium transition-colors flex justify-center items-center cursor-pointer;
     }
 
     .btn-primary {
-      @apply bg-primary text-black hover:bg-primary/80;
+      @apply bg-primary text-black hover:bg-primary/80 cursor-pointer
     }
 
     .btn-secondary {
-      @apply bg-secondary text-black hover:bg-secondary/80;
+      @apply bg-secondary text-black hover:bg-secondary/80 cursor-pointer;
     }
 
     .btn-outline {
       @apply border border-white/20 hover:border-white/40 text-white;
     }
+    .cancel-btn {
+    @apply  text-base px-6 py-2 font-bold rounded-md bg-gray-50 text-gray-700 hover:bg-gray-100;
+  }
+
+  .shad-select {
+    @apply  bg-dark-200 placeholder:text-gray-100 text-base border border-dark-200 h-11 focus:ring-0 focus:ring-offset-0 cursor-pointer;
+  }
+  .shad-content {
+    @apply bg-dark-100 border border-dark-200 text-base text-white;
+  }
+  .shad-textArea {
+    @apply bg-white placeholder:text-gray-100 border-dark-200 focus-visible:ring-0 focus-visible:ring-offset-0 text-base;
+  }
+  .shad-input-label {
+    @apply text-base text-white;
+  }
+  .shad-input {
+    @apply bg-white placeholder:text-gray-200 text-base border-dark-200 h-11 focus-visible:ring-0 focus-visible:ring-offset-0 ;
+  }
   }
 
   /******** Reduced motion ********/

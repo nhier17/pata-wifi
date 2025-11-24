@@ -9,7 +9,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Control } from 'react-hook-form';
-import { Select, SelectContent, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectTrigger, SelectValue, SelectItem } from '@/components/ui/select';
 
 export enum FormFieldType {
     INPUT = 'input',
@@ -23,6 +23,8 @@ interface CustomInputProps {
     fieldType: FormFieldType;
     label?: string;
     placeholder?: string;
+    options?: { value: string; label: string }[];
+     disabled?: boolean; 
     children?: React.ReactNode;
 }
 
@@ -34,7 +36,7 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                     <Input 
                     {...field}
                     placeholder={props.placeholder}
-                    className='field-input'
+                    className='shad-input'
                     />
                 </FormControl>
             );
@@ -44,39 +46,41 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                     <Textarea 
                     {...field}
                     placeholder={props.placeholder}
-                    className='field-input'
+                    className='shad-textarea'
                     />
                 </FormControl>
             );
         case FormFieldType.SELECT:
             return (
-                <FormControl>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
-                  <FormControl>
-                    <SelectTrigger className="shad-select-trigger w-full">
-                      <SelectValue placeholder={props.placeholder} />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent className="shad-select-content">
-                    {props.children}
-                  </SelectContent>
-                </Select>
-              </FormControl>
-            );
+                 <FormControl>
+                     <Select onValueChange={field.onChange} defaultValue={field.value} disabled={props.disabled}>
+                         <SelectTrigger className="shad-select w-full ">
+                             <SelectValue placeholder={props.placeholder} />
+                         </SelectTrigger>
+                         <SelectContent className="shad-content bg-dark-200 text-white">
+                             {props.options?.map((option) => (
+                                 <SelectItem key={option.value} value={option.value}>
+                                     {option.label}
+                                 </SelectItem>
+                             ))}
+                         </SelectContent>
+                     </Select>
+                 </FormControl>
+             );
         default:
             return null;
     }
 }
 
 export function CustomFormField(props: CustomInputProps) {
-    const { control, name, fieldType, label, placeholder, children } = props;
+    const { control, name, label } = props;
     return (
         <FormField
             control={control}
             name={name}
             render={({ field }) => (
                 <FormItem>
-                {label && <FormLabel className="field-label">{label}</FormLabel>}
+                {label && <FormLabel className="shad-input-label">{label}</FormLabel>}
                 <RenderField field={field} props={props} />
                 <FormMessage className="text-red-500" />
                 </FormItem>

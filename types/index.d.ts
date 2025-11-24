@@ -1,6 +1,6 @@
 declare interface GetConnectedProps {
   trigger: React.ReactNode
-  defaultTariffs?: string[]
+  defaultTariffs?: string
   allTariffs?: string[]
   className?: string
 }
