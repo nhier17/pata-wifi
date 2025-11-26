@@ -58,7 +58,7 @@ export const Coverage = () => {
             {towns.map((t) => (
               <li
                 key={t}
-                className="px-3 py-2 rounded-md bg-white/5 border border-white/10 text-white/90 text-sm hover:bg-cyan-500/10 transition"
+                className="px-3 py-2 rounded-md bg-white/5 border border-white/10 text-white/90 text-sm hover:bg-cyan-500/10 transition font-orbitron"
               >
                 {t}
               </li>

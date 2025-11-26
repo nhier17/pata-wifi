@@ -63,7 +63,7 @@ export const Hero = () => {
           src="https://i.pinimg.com/1200x/33/1d/b4/331db42cf749f1200c7069476ac9f36b.jpg"
           alt="Fiber optic internet in Kenya"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover object-[50%_30%] opacity-50"
           priority
         />
       </div>

@@ -11,7 +11,7 @@ export const Footer = () => {
         <div>
           <div className="flex items-center gap-2">
             <Image
-            src="/images/logo.jpeg"
+            src="/images/pata.png"
             alt="Pata WiFi Logo"
             width={50}
             height={50}

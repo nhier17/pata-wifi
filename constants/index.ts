@@ -14,6 +14,7 @@ export const navItems = [
     { href: '#why', label: 'Why Us' },
     { href: '#pricing', label: 'Pricing' },
     { href: '#coverage', label: 'Coverage' },
+    {href: '/impact', label: 'Impact'},
     { href: '#contact', label: 'Contact' },
   ]
 
@@ -69,44 +70,154 @@ export const whyUs = [
 //pricing
 export const plans = [
   {
-    name: 'Daily WiFi (Kadogo Pass)',
-    price: 'KSh 50 — 100/day',
-    speed: 'Up to 10 Mbps',
-    features: ['Pay-as-you-go', 'Great for students', 'Hotspot access'],
-    cta: 'Buy Daily Pass',
+    name: "Daily WiFi Pass (Kadogo)",
+    price: "KSh 50 / 24hrs",
+    speed: "Up to 100 Mbps • Unlimited",
+    features: [
+      "24-hour access",
+      "Fast speeds up to 100 Mbps",
+      "Unlimited usage",
+      "Perfect for mobile users",
+    ],
+    popular: true,
+  },
+
+  {
+    name: "Home Internet — 8 Mbps",
+    price: "KSh 1,500",
+    speed: "8 Mbps Unlimited",
+    features: [
+      "Unlimited usage",
+      "Stable fiber speeds",
+      "Great for light browsing & streaming",
+    ],
   },
   {
-    name: 'Home Internet — Standard',
-    price: 'KSh 2,500/mo',
-    speed: '20–30 Mbps',
-    features: ['Unlimited data', 'Free router on yearly plan', 'Evening peak optimization'],
-    cta: 'Get Home Internet',
+    name: "Home Internet — 15 Mbps",
+    price: "KSh 2,000",
+    speed: "15 Mbps Unlimited",
+    features: [
+      "Unlimited usage",
+      "Smooth streaming",
+      "Work-from-home friendly",
+    ],
   },
   {
-    name: 'Home Internet — Turbo',
-    price: 'KSh 3,999/mo',
-    speed: '50–70 Mbps',
-    features: ['Unlimited data', 'Ideal for 4K streaming', 'Gaming friendly latency'],
-    cta: 'Get Turbo',
+    name: "Home Internet — 20 Mbps",
+    price: "KSh 2,500",
+    speed: "20 Mbps Unlimited",
+    features: [
+      "Unlimited usage",
+      "HD streaming",
+      "Gaming friendly",
+    ],
   },
   {
-    name: 'Business — Starter',
-    price: 'KSh 6,999/mo',
-    speed: 'Up to 100 Mbps',
-    features: ['Priority support', 'Static IP (optional)', 'SLA available'],
-    cta: 'Get Business Internet',
+    name: "Home Internet — 30 Mbps",
+    price: "KSh 3,000",
+    speed: "30 Mbps Unlimited",
+    features: [
+      "Unlimited usage",
+      "Perfect for families",
+      "Multiple devices",
+    ],
   },
-]
+  {
+    name: "Home Internet — 50 Mbps",
+    price: "KSh 5,000",
+    speed: "50 Mbps Unlimited",
+    features: [
+      "Unlimited usage",
+      "4K streaming",
+      "Heavy downloading",
+      "Large households",
+    ],
+  },
+
+  {
+    name: "Reseller Package — 100 to 500 Mbps",
+    price: "KSh 250 per Mbps",
+    speed: "100–500 Mbps",
+    features: [
+      "Wholesale pricing",
+      "Collection at any ATC Tower",
+      "Perfect for WISPs & hotspots",
+      "Flexible scalability",
+    ],
+  },
+  {
+    name: "Reseller Package — 500 Mbps to 1 Gbps",
+    price: "KSh 220 per Mbps",
+    speed: "500 Mbps – 1 Gbps",
+    features: [
+      "Lower cost per Mbps",
+      "High-capacity backhaul",
+      "Data center connections",
+    ],
+  },
+  {
+    name: "Reseller Package — 1 Gbps+",
+    price: "KSh 180 per Mbps",
+    speed: "1 Gbps+",
+    features: [
+      "Enterprise-grade capacity",
+      "Carrier-level reliability",
+      "Scalable to multi-Gbps",
+    ],
+  },
+
+  {
+    name: "Business Internet",
+    price: "Tailored on Request",
+    speed: "Custom Packages",
+    features: [
+      "Dedicated bandwidth",
+      "Enterprise support",
+      "Public IPs",
+      "Custom SLAs available",
+    ],
+  },
+];
+
 
 
 //coverage
 export const coverage = {
 towns: [
   'Nairobi', 'Mombasa', 'Nakuru', 'Eldoret', 'Thika',
-  'Kisumu', 'Nyeri', 'Kitengela', 'Ruiru', 'Kiambu',
+  'Kisumu', 'Nyeri', 'Kitengela', 'Ruiru', 'Kiambu', 'Kajiado(DC Area)'
 ],
 estates: [
   'South B', 'South C', 'Ngong Road', 'Embakasi', 'Kasarani',
-  'Utawala', 'Rongai', 'Ruaka', 'Zimmerman', 'Donholm',
+  'Utawala', 'Rongai', 'Ruaka', 'Zimmerman', 'Donholm','Lumumba drive',
+  'Obama', 'Mathare', 'Kariobangi', 'Civil Servant', 'Huruma', 'Mowlem', 'Outering Rd',
+  'Korogocho',
 ],
 }
+
+export const impactStories = [
+  {
+    id: "connecting-kawangware-schools",
+    title: "Connecting Schools in Kawangware",
+    excerpt:
+      "Pata WiFi partnered with local community leaders to provide affordable internet to three schools, enabling over 800 students to access digital learning.",
+    date: "Feb 2025",
+    img: "https://images.unsplash.com/photo-1588075592395-39a08751b749?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "supporting-small-businesses",
+    title: "Supporting Small Businesses with Reliable Internet",
+    excerpt:
+      "We have empowered over 120 SMEs across Nairobi and Thika with stable fiber connections to grow their digital operations.",
+    date: "Jan 2025",
+    img: "https://images.unsplash.com/photo-1521790945508-bf2a36314e85?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "community-hotspots",
+    title: "Community Hotspots for Low-Income Estates",
+    excerpt:
+      "Our Kadogo Hotspot solution has enabled thousands of residents to access affordable daily internet for work, study and communication.",
+    date: "Dec 2024",
+    img: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a6?auto=format&fit=crop&w=1200&q=80",
+  },
+];

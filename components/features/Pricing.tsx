@@ -50,7 +50,7 @@ export const Pricing = () => {
       <div className="text-center pricing-animate">
         <h2 className="section-title">Pata Wifi Packages</h2>
       </div>
-      <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         {plans.map((p, i) => {
           const allTariffs = plans.map((pl) => pl.name);
