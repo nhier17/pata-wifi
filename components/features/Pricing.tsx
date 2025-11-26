@@ -58,7 +58,8 @@ export const Pricing = () => {
           return (
             <div
               key={p.name}
-              className="pricing-animate relative p-6 rounded-2xl border backdrop-blur-lg shadow-xl transition hover:shadow-2xl">
+              className={`relative bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-md transition hover:border-cyan-300/40 hover:bg-white/10`}
+              >
 
               <h3 className="font-heading text-2xl font-bold text-white">
                 {p.name}
@@ -84,7 +85,7 @@ export const Pricing = () => {
                   trigger={
                     <Button
                       type="button"
-                      className="w-full font-semibold py-3"
+                      className="w-full font-semibold py-3 cursor-pointer"
                     >
                       Get Connected
                     </Button>
