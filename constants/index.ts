@@ -188,8 +188,7 @@ towns: [
   'Kisumu', 'Nyeri', 'Kitengela', 'Ruiru', 'Kiambu', 'Kajiado(DC Area)'
 ],
 estates: [
-  'South B', 'South C', 'Ngong Road', 'Embakasi', 'Kasarani',
-  'Utawala', 'Rongai', 'Ruaka', 'Zimmerman', 'Donholm','Lumumba drive',
+  'Ngong Road', 'Embakasi', 'Kasarani', 'Rongai', 'Ruaka', 'Donholm', 'Lumumba drive',
   'Obama', 'Mathare', 'Kariobangi', 'Civil Servant', 'Huruma', 'Mowlem', 'Outering Rd',
   'Korogocho',
 ],
