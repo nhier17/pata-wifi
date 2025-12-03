@@ -3,17 +3,18 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 import { Button } from "../ui/button";
 import { navItems } from "../../constants";
-import { cn } from "@/lib/utils";
-import clsx from "clsx";
 
 export const Navbar = () => {
+    const params = useSearchParams();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-      useEffect(() => {
+    const sec = params.get("sec")
+
+     useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8)
     onScroll()
     window.addEventListener('scroll', onScroll)
@@ -35,6 +36,15 @@ export const Navbar = () => {
       window.removeEventListener('resize', onResize)
     }
   }, [])
+
+  useEffect(() => {
+    if (sec) {
+      const el = document.getElementById(sec);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [sec]);
     
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -45,7 +55,7 @@ export const Navbar = () => {
       }`}
     >
       <nav className="container-custom flex items-center justify-between py-3">
-        <Link href="#" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="h-9 w-9 rounded-xl bg-primary/90 bg-glow grid place-items-center font-heading text-black">P</div>
           <span className="font-heading tracking-wide text-white group-hover:text-(--neon-cyan) transition-colors">Pata WiFi</span>
         </Link>
@@ -55,6 +65,7 @@ export const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
+              scroll={false}
               className="text-sm text-white/80 hover:text-white transition-colors"
             >
               {item.label}
@@ -63,7 +74,7 @@ export const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          <Link href="#pricing" className="btn btn-primary hidden md:inline-flex  text-white px-3 py-2">Get Connected</Link>
+          <Link href="/?sec=pricing" scroll={false} className="btn btn-primary hidden md:inline-flex  text-white px-3 py-2">Get Connected</Link>
           <Button
             type="button"
             aria-expanded={isMenuOpen}
@@ -87,6 +98,7 @@ export const Navbar = () => {
                 <Link
                   key={item.href}
                   href={item.href}
+                  scroll={false}
                   onClick={toggleMenu}
                   className="rounded-lg px-3 py-2 text-white/90 hover:text-white hover:bg-white/5 transition-colors"
                 >
@@ -94,7 +106,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <div className="mt-2 flex gap-2">
-                <Link href="#pricing" onClick={toggleMenu} className="btn btn-primary flex-1 bg-primary text-white px-3 py-2">
+                <Link href="/?sec=pricing" scroll={false} onClick={toggleMenu} className="btn btn-primary flex-1 bg-primary text-white px-3 py-2">
                 Get Connected</Link>
               </div>
             </div>

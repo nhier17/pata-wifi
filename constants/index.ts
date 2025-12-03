@@ -9,14 +9,14 @@ import {
 } from 'lucide-react'
 
 export const navItems = [
-    { href: '#about', label: 'About' },
-    { href: '#services', label: 'Services' },
-    { href: '#why', label: 'Why Us' },
-    { href: '#pricing', label: 'Pricing' },
-    { href: '#coverage', label: 'Coverage' },
-    {href: '/impact', label: 'Impact'},
-    { href: '#contact', label: 'Contact' },
-  ]
+  { label: "Home", href: "/" },
+  { label: "About", href: "/?sec=about" },
+  { label: "Services", href: "/?sec=services" },
+  { label: "Coverage", href: "/?sec=coverage" },
+  { label: "Why Choose Us", href: "/?sec=why" },
+  { label: "Pricing", href: "/?sec=pricing" },
+  { label: "Impact", href: "/impact" },
+];
 
 //footer
 export const footerLinks = [
@@ -220,3 +220,13 @@ export const impactStories = [
     img: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a6?auto=format&fit=crop&w=1200&q=80",
   },
 ];
+
+//impact stats
+export const impactStats = [
+  { label: "Estates Connected", value: 20, suffix: "+" },
+  { label: "Households Served", value: 3000, suffix: "+" },
+  { label: "SMEs Connected", value: 150, suffix: "+" },
+  { label: "Network Uptime", value: 98, suffix: "%" },
+];
+
+
