@@ -4,6 +4,8 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { Suspense } from "react";
+import { Loader2 } from "lucide-react";
 
 const orbitron = Orbitron({
   variable: "--font-orbitron",
@@ -33,7 +35,9 @@ export default function RootLayout({
       <body
         className={`${orbitron.variable} ${exo.variable} antialiased bg-dark-100`}
       >
-        <Navbar />
+        <Suspense fallback={<Loader2 className="animate-spin size-8" />}>
+          <Navbar />
+        </Suspense>
         {children}
         <Toaster richColors position="top-right" />
         <Footer />

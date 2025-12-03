@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
@@ -11,9 +11,7 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ImpactPage() {
-  const [animatedStats, setAnimatedStats] = useState<number[]>(impactStats.map(() => 0));
    const statsRef = useRef<HTMLDivElement>(null);
-   const animationRef = useRef<{ [key: number]: number }>({});
 
 useGSAP(() => {
   gsap.utils.toArray(".impact-animate").forEach((el: any, i: number) => {
@@ -108,7 +106,6 @@ useGSAP(() => {
         {impactStats.map((impact, i) => (
           <StatCard
             key={i}
-            number={animatedStats[i]}
             suffix={impact.suffix}
             label={impact.label}
           />
