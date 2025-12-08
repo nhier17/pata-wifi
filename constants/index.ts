@@ -179,6 +179,13 @@ export const plans = [
   },
 ];
 
+export const DEFAULT_TARIFFS = plans.map(plan => ({
+  value: plan.name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, ""),
+  label: `${plan.name} — ${plan.price}`,
+}));
 
 
 //coverage
@@ -194,32 +201,6 @@ estates: [
 ],
 }
 
-export const impactStories = [
-  {
-    id: "connecting-kawangware-schools",
-    title: "Connecting Schools in Kawangware",
-    excerpt:
-      "Pata WiFi partnered with local community leaders to provide affordable internet to three schools, enabling over 800 students to access digital learning.",
-    date: "Feb 2025",
-    img: "https://images.unsplash.com/photo-1588075592395-39a08751b749?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "supporting-small-businesses",
-    title: "Supporting Small Businesses with Reliable Internet",
-    excerpt:
-      "We have empowered over 120 SMEs across Nairobi and Thika with stable fiber connections to grow their digital operations.",
-    date: "Jan 2025",
-    img: "https://images.unsplash.com/photo-1521790945508-bf2a36314e85?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    id: "community-hotspots",
-    title: "Community Hotspots for Low-Income Estates",
-    excerpt:
-      "Our Kadogo Hotspot solution has enabled thousands of residents to access affordable daily internet for work, study and communication.",
-    date: "Dec 2024",
-    img: "https://images.unsplash.com/photo-1531497865144-0464ef8fb9a6?auto=format&fit=crop&w=1200&q=80",
-  },
-];
 
 //impact stats
 export const impactStats = [
@@ -227,6 +208,99 @@ export const impactStats = [
   { label: "Households Served", value: 3000, suffix: "+" },
   { label: "SMEs Connected", value: 150, suffix: "+" },
   { label: "Network Uptime", value: 98, suffix: "%" },
+];
+
+// /stories
+export const impactStories = [
+    {
+    id: "korogocho-ftth-rollout",
+    title: "Lighting Up Korogocho With Fiber",
+    teaser:
+      "We deployed 1.25km of fiber into Korogocho, connected 30 homes, and trained local youth to lead installations despite heavy deployment challenges.",
+    full: `
+Korogocho is one of Nairobi’s most densely populated informal settlements. For years, thousands of families lived without reliable internet.
+
+To change this, Pata WiFi deployed 1.25km of fiber directly from our main distribution office into the heart of Korogocho. We also set up multiple local pick-up and support stations to make access easier.
+
+Four months after breaking ground, we connected 30 households to high-speed internet — enabling online work, learning, communication, security systems, and entertainment.
+
+Challenges included early wireless infrastructure theft, unsafe access due to territorial gatekeepers, and installation delays. To overcome this, we trained local youth in FTTH deployment. Since then, installations and support are now handled safely and efficiently from within the community itself.
+    `,
+    img: "https://i.pinimg.com/1200x/7f/01/ef/7f01ef26155c8db35715948f2a6c8b4d.jpg",
+    region: "Korogocho",
+    category: "Infrastructure & Community FTTH",
+    date: "2025",
+  },
+
+  {
+    id: "kariobangi-street-wifi",
+    title: "How Kariobangi Came Online",
+    teaser:
+      "Street WiFi and 100Mbps Kadogo internet transformed daily digital access for small traders, boda riders, and content creators.",
+    full: `
+Kariobangi is a place of daily hustle — from mama mbogas and welders to boda riders and content creators. Expensive internet had held many back.
+
+Pata WiFi launched street-based WiFi hotspots directly where people work. Then we introduced a powerful package: 100 Mbps unlimited for 24 hours.
+
+This shifted everything. Youth now upload content instantly, apply for online jobs, attend interviews, and run businesses without delays. For the first time, fast internet became accessible on demand — without contracts or expensive bundles.
+    `,
+    img: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop",
+    region: "Kariobangi",
+    category: "Kadogo WiFi & Youth Empowerment",
+    date: "2024",
+  },
+
+  {
+    id: "dandora-ondemand-ftth",
+    title: "On-Demand Home Fiber Coming to Dandora",
+    teaser:
+      "We are preparing an on-demand FTTH rollout in Dandora focused on flexibility, affordability, and no monthly commitments.",
+    full: `
+Families in Dandora rely heavily on the internet for schoolwork, communication, and small businesses—but bundles remain expensive and home internet often inflexible.
+
+Pata WiFi is rolling out a new on-demand Fiber-to-the-Home model allowing residents to activate internet only when needed, avoid monthly commitments, and enjoy real fiber speeds.
+
+This approach was shaped directly by community feedback where flexibility matters as much as speed. The goal is to give households full control of costs while maintaining stable connectivity.
+    `,
+    img: "https://i.pinimg.com/736x/55/eb/0c/55eb0c14f9017d306f5714a3904dbeb4.jpg",
+    region: "Dandora",
+    category: "On-Demand Home Fiber",
+    date: "Coming Soon",
+  },
+  {
+    id: "kasarani-homes",
+    title: "Transforming Internet Access in Kasarani & Lumumba Drive",
+    teaser:
+      "We connected multiple estates across Kasarani where speeds were poor. Students now join online classes without interruption and families stream and work reliably.",
+    full: `Before Pata WiFi, many parts of Kasarani and Lumumba Drive had slow, unreliable connections and expensive bundles. We deployed fiber-backed last-mile links and affordable home plans. Since then, students attend online classes without interruptions, small shops accept mobile payments, and families stream and work from home with confidence.`,
+    img: "https://i.pinimg.com/1200x/66/6f/a8/666fa8a278708251f1043093ef2a1512.jpg",
+    region: "Kasarani",
+    category: "Home Connectivity",
+    date: "Mar 2025",
+  },
+  {
+    id: "embakasi-sme-growth",
+    title: "Embakasi SMEs grow with reliable connectivity",
+    teaser:
+      "Cyber cafés and mini shops in Embakasi now accept digital payments and serve more customers thanks to stable internet.",
+    full: `Embakasi has seen a rapid uplift in small business productivity. Cyber cafés and mini-shops that previously lost sales due to flaky connections now accept payments, provide services reliably and expand digital offerings. Pata WiFi worked with owners to optimize connectivity and advise on POS and mobile-pay setups.`,
+    img: "https://i.pinimg.com/1200x/f3/44/52/f34452302add40865a91bac9efba0d74.jpg",
+    region: "Embakasi",
+    category: "Business & SME",
+    date: "Feb 2025",
+  },
+  {
+    id: "kariobangi-mathare",
+    title: "Kariobangi & Mathare: Closing the connectivity gap",
+    teaser:
+      "We expanded last-mile access and low-cost Kadogo passes so more residents and small businesses can get online affordably.",
+    full: `By deploying last-mile links and partnering with community leaders in Kariobangi and Mathare, we launched Kadogo hotspots and affordable home plans. Residents now access education resources, start small e-commerce initiatives, and maintain contact with family and customers.`,
+    img: "https://i.pinimg.com/736x/8a/de/da/8adedae325b6a59791bf9b347594f95d.jpg",
+    region: "Kariobangi",
+    category: "Community Hotspots",
+    date: "Dec 2024",
+  },
+  // add more stories as you create them
 ];
 
 

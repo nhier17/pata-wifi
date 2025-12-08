@@ -12,18 +12,12 @@ import CustomFormField, {FormFieldType } from "./CustomFormField";
 import { userSchema, cn } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { DEFAULT_TARIFFS } from "@/constants";
 
 
 type FormValues = z.infer<typeof userSchema>
 
-const DEFAULT_TARIFFS = [
-  {value: 'daily', label: 'Daily WiFi (Kadogo Pass)'},
-  {value: 'home-standard', label: 'Home Internet — Standard'},
-  {value: 'home-turbo', label: 'Home Internet — Turbo'},
-  {value: 'business-starter', label: 'Business — Starter'},
-]
-
-const WHATSAPP_NUMBER = '254795642609'
+const WHATSAPP_NUMBER = '254727717901'
 
 export const GetConnectedForm = ({ trigger, defaultTariffs, allTariffs, className }: GetConnectedProps) => {
     const [loading, setLoading] = useState(false);

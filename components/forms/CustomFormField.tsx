@@ -18,11 +18,12 @@ export enum FormFieldType {
 }
 
 interface CustomInputProps {
-    control: Control<any>;
+    control?: Control<any>;
     name: string;
     fieldType: FormFieldType;
     label?: string;
     placeholder?: string;
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     options?: { value: string; label: string }[];
      disabled?: boolean; 
     children?: React.ReactNode;
@@ -36,6 +37,10 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                     <Input 
                     {...field}
                     placeholder={props.placeholder}
+                   onChange={(e) => {
+                        field.onChange(e);
+                        props.onChange?.(e);
+                    }}
                     className='shad-input'
                     />
                 </FormControl>
@@ -45,6 +50,10 @@ const RenderField = ({ field, props }: { field: any; props: CustomInputProps }) 
                 <FormControl>
                     <Textarea 
                     {...field}
+                 onChange={(e) => {
+                        field.onChange(e);
+                        props.onChange?.(e);
+                    }}
                     placeholder={props.placeholder}
                     className='shad-textarea'
                     />

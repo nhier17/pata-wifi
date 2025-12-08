@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { impactStats } from "@/constants";
 import Link from "next/link";
+import StoryCardGrid from "@/components/StoryCardGrid";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,44 +30,47 @@ useGSAP(() => {
   });
 
   // Optimized stat counters
-  ScrollTrigger.create({
-    trigger: statsRef.current,
-    start: "top 80%",
-    onEnter: () => {
-      document.querySelectorAll(".stat-value").forEach((el: any, index) => {
-        const targetValue = impactStats[index].value;
-        const counter = { val: 0 };
+ScrollTrigger.create({
+  trigger: statsRef.current,
+  start: "top 80%",
+  once: true,
+  onEnter: () => {
+    const elements = statsRef.current?.querySelectorAll(".stat-value");
 
-        gsap.to(counter, {
-          val: targetValue,
-          duration: 2,
-          ease: "power2.out",
-          onUpdate: () => {
-            el.textContent = Math.floor(counter.val).toLocaleString();
-          },
-        });
+    elements?.forEach((el, index) => {
+      const targetValue = impactStats[index].value;
+      const counter = { val: 0 };
+
+      gsap.to(counter, {
+        val: targetValue,
+        duration: 2,
+        ease: "power2.out",
+        onUpdate: () => {
+          el.textContent = Math.floor(counter.val).toLocaleString();
+        },
       });
-    },
-  });
+    });
+  },
+});
 });
 
 
   return (
     <main className="min-h-screen text-white root-container">
-      <section className="relative h-[60vh] flex items-center">
-        <Image
+      <section className="relative h-[60vh] flex items-center overflow-hidden">
+          <Image
           src="https://i.pinimg.com/736x/80/02/06/800206c592ffe136236234af04f1773c.jpg"
           alt="Community impact"
           fill
-          className="object-cover object-[50%_30%] opacity-40"
+          className="object-cover object-[50%_30%]"
+          priority
         />
-     <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-black/30" />
-
-        <div className="relative root-container text-center">
-          <h1 className="text-4xl md:text-6xl font-heading font-bold impact-animate">
+        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/40 via-emerald-400/30 to-black/40"></div>
+        <div className="relative root-container text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-heading font-bold text-white drop-shadow-xl impact-animate">
             Our Impact
           </h1>
-          <p className="mt-4 text-lg text-white/80 max-w-2xl mx-auto impact-animate">
+          <p className="mt-4 text-lg md:text-xl text-white/95 max-w-2xl mx-auto drop-shadow impact-animate">
             Connecting communities, empowering businesses, and expanding access
             to fast, reliable internet across Kenya.
           </p>
@@ -143,24 +147,8 @@ useGSAP(() => {
           Stories From the Community
         </h2>
 
-        <div className="mt-12 space-y-16">
-          <StoryBlock
-            title="Kasarani: Faster internet for students and families"
-            story="We connected multiple estates across Kasarani and Lumumba Drive where speeds were previously poor. Students now join online classes without interruption and families stream and work from home reliably."
-            img="https://i.pinimg.com/1200x/66/6f/a8/666fa8a278708251f1043093ef2a1512.jpg"
-          />
-
-          <StoryBlock
-            title="Embakasi SMEs grow with reliable connectivity"
-            story="Cyber cafés and mini shops in Embakasi now accept payments and provide consistent services thanks to our stable internet — helping business owners increase daily revenue."
-            img="https://i.pinimg.com/1200x/f3/44/52/f34452302add40865a91bac9efba0d74.jpg"
-          />
-
-          <StoryBlock
-            title="Kariobangi & Mathare: Closing the connectivity gap"
-            story="By deploying last-mile links and partnering with local leaders, we expanded low-cost access in Kariobangi and Mathare — enabling more digital inclusion across communities."
-            img="https://i.pinimg.com/736x/8a/de/da/8adedae325b6a59791bf9b347594f95d.jpg"
-          />
+        <div className="mt-8">
+          <StoryCardGrid />
         </div>
       </section>
 
